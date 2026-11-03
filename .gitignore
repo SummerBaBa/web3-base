@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+
+# Hardhat
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/
+
+# App runtime data
+server/data/
+web/dist/
+*.log
+.env
+.env.*
+!.env.example

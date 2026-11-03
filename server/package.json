@@ -1,0 +1,14 @@
+{
+  "name": "@chainlab/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "ethers": "^6.17.0",
+    "express": "^5.3.0"
+  }
+}

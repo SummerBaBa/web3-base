@@ -1,0 +1,32 @@
+{
+  "name": "chainlab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ChainLab — 一个看得见的 Web3 入门实验室（Solidity + Hardhat + ethers.js + React + Express + SQLite）",
+  "workspaces": [
+    "contracts",
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n chain,deploy,server,web -c yellow,cyan,green,magenta \"npm:dev:chain\" \"npm:dev:deploy\" \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:chain": "npm --workspace contracts run node",
+    "dev:deploy": "wait-on tcp:127.0.0.1:8545 && npm --workspace contracts run deploy",
+    "dev:server": "wait-on server/data/deployment.json && npm --workspace server run dev",
+    "dev:web": "npm --workspace web run dev",
+    "chain": "npm --workspace contracts run node",
+    "deploy": "npm --workspace contracts run deploy",
+    "server": "npm --workspace server run start",
+    "build": "npm --workspace contracts run compile && npm --workspace web run build",
+    "test": "npm --workspace contracts test",
+    "clean": "rm -rf contracts/artifacts contracts/cache server/data web/dist"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "wait-on": "^9.5.1"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}

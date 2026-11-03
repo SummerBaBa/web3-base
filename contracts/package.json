@@ -1,0 +1,18 @@
+{
+  "name": "@chainlab/contracts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.2.2",
+    "@nomicfoundation/hardhat-node-test-runner": "^3.1.2",
+    "ethers": "^6.17.0",
+    "hardhat": "^3.21.0"
+  }
+}
